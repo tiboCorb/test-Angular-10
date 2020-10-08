@@ -1,0 +1,18 @@
+.card{
+  width: 250px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  background-color: white;
+  margin : 10px;
+  border-radius :5px;
+   border : 2px solid transparent;
+
+  transition: 0.2s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  &.selected{
+     transition:  0.2s all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border : 2px solid grey
+  }
+;}

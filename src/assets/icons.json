@@ -1,0 +1,30 @@
+[
+  {"id": 0,
+  "name":"rowing",
+  "color": "#ad1457"
+  },
+  {"id": 1,
+  "name":"touch_app",
+  "color": "#6a1b9a"
+  },
+  {"id": 2,
+  "name":"fastfood",
+  "color": "#4527a0"
+  },
+  {"id": 3,
+  "name":"bathtub",
+  "color": "#1565c0"
+  },
+  {"id": 4,
+  "name":"masks",
+  "color": "#00838f"
+  },
+  {"id": 5,
+  "name":"clean_hands",
+  "color": "#2e7d32"
+  },
+  {"id": 6,
+  "name":"electric_scooter",
+  "color": "#ff8f00"
+  }
+]
