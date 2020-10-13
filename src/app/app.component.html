@@ -1,5 +1,7 @@
 <div class="container">
-  <test-card *ngFor="let card of cards, let i = index" [card]='card'  (click)='select(i)' ></test-card>
+  <test-card  [icon]='paintedIcon'  (click)='select(0)' ></test-card>
+    <test-card  [icon]='paintedIcon'  (click)='select(0)' ></test-card>
+      <test-card  [icon]='paintedIcon'  (click)='select(0)' ></test-card>
 </div>
 <div class="container">
   <test-select (selectOptionChanged)='selectionChanged($event)'></test-select>

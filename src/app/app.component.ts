@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Card } from "./model/card.model";
 import { Icon } from "./model/icon.model";
 
 
@@ -10,15 +9,14 @@ import { Icon } from "./model/icon.model";
 })
 export class AppComponent implements OnInit {
   public selectedIndex: number;
-  public cards: Card[];
+ 
   public selectedIcon : Icon;
-  public cardIndex : number;
+  public paintedIcon :Icon;
+ 
 
   constructor() {
     this.selectedIndex = null;
     this.selectedIcon = null;
-    this.cardIndex = null;
-    this.cards = [];
   }
 
   ngOnInit(): void {
@@ -26,25 +24,12 @@ export class AppComponent implements OnInit {
   }
 
   select(index: number) {
-    if (!this.cards[index].selected) {
-      this!.cards.forEach(card => (card.selected = false));
-      this.cardIndex = index;
-      this.cards[index].selected = true;
-    } else {
-      this.cardIndex = null;
-      this.cards[index].selected = false;
-    }
+   /**TODO */
   }
 
   paint() {
     /**TODO */
-    if (this.cardIndex !== null) {
-      const currentCard = this.cards[this.cardIndex];
-       this.cards[this.cardIndex] = {...currentCard,
-        icon : this.selectedIcon,
-        selected :false,
-       }
-    }
+    this.paintedIcon = {...this.selectedIcon};
   }
 
   public selectionChanged(icon :Icon):void{
@@ -52,8 +37,6 @@ export class AppComponent implements OnInit {
   }
 
   private initCard() {
-    for (let i = 0; i < 3; i++) {
-      this.cards.push({});
-    }
+    /**TODO */
   }
 }

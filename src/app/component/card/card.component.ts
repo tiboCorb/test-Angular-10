@@ -1,5 +1,6 @@
 import {  Component,Input } from "@angular/core";
-import { Card } from "../../model/card.model";
+
+import { Icon } from "../../model/icon.model";
 
 
 
@@ -10,7 +11,7 @@ import { Card } from "../../model/card.model";
 })
 export class CardComponent  {
 
-  @Input() card : Card;
+  @Input() icon : Icon;
  
 
   constructor(){}

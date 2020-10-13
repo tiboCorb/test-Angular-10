@@ -1,6 +1,4 @@
 
-<div class='card' [ngClass]="{'selected': card?.selected}" [ngStyle]="{'background-color' : card?.icon?.color}">
-  <mat-icon>{{card.icon?.name}}</mat-icon>
-<!-- TODO-->
-  <span> </span>
+<div class='card' [ngClass]="{'selected': false}" [ngStyle]="{'background-color' : icon?.color}">
+  <mat-icon>{{icon?.name}}</mat-icon>
 </div>

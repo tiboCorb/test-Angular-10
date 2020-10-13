@@ -1,4 +1,3 @@
- ## Ajouter l'heure de mise à jour sur les cartes
+ ## Parcourir une liste de carte et selection
 
-
-Ajouter sur les cartes l'heure de mise à jour au format suivant : 03:40
+en utilisant une directive créer une liste de carte , permettre de  selectionner la carte à modifier
