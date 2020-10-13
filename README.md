@@ -1,7 +1,3 @@
- ## Création de service 
+ ## Corriger les erreurs
 
-Créer un service qui exposera une méthode :
-    
-    getIcon(): Observable<Icon[]>
-
-et alimenetera la selectbox 
+Il y a trois erreurs a corriger 
