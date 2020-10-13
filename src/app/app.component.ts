@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Card } from "./model/card.model";
+import { Icon } from "./model/icon.model";
 import { IconService } from "./service/icon.service";
 
 @Component({
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit {
   public selectedIndex: number;
   public cards: Card[];
 
-  constructor(private iconService: IconService) {
+  constructor(public iconService: IconService) {
     this.selectedIndex = null;
     this.cards = [];
   }
@@ -43,6 +44,10 @@ export class AppComponent implements OnInit {
         date: new Date()
        }
     }
+  }
+
+  public selectionChanged(icon :Icon):void{
+    this.iconService.selectedIcon = {...icon}
   }
 
   private initCard() {

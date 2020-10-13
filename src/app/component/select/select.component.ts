@@ -1,4 +1,4 @@
-import {  Component, EventEmitter,Output, Input} from "@angular/core";
+import {  Component, EventEmitter,Output} from "@angular/core";
 import { Icon } from "../../model/icon.model";
 import { IconService } from "../../service/icon.service";
 
@@ -11,8 +11,10 @@ import { IconService } from "../../service/icon.service";
 export class SelectComponent  {
 
 
- @Input() selectOption : Icon[];
- @Output() selectOptionChanged : EventEmitter<Icon>;
+ 
+ @Output()selectOptionChanged : EventEmitter<Icon>;
+
+ public selectOption : Icon[];
  public selectIcon : Icon;
 
 
