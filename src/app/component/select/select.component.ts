@@ -1,4 +1,4 @@
-import {  Component, EventEmitter,Output} from "@angular/core";
+import {  Component} from "@angular/core";
 import { Icon } from "../../model/icon.model";
 import { IconService } from "../../service/icon.service";
 
@@ -10,10 +10,6 @@ import { IconService } from "../../service/icon.service";
 })
 export class SelectComponent  {
 
-
- 
- @Output()selectOptionChanged : EventEmitter<Icon>;
-
  public selectOption : Icon[];
  public selectIcon : Icon;
 
@@ -23,7 +19,6 @@ export class SelectComponent  {
     /**
      * TODO
      */
-    this.selectOptionChanged = new EventEmitter();
     this.iconService.getIcon().subscribe( (icons: Icon[]) => {
       this.selectOption = [...icons] 
     })
@@ -31,8 +26,7 @@ export class SelectComponent  {
 
   updateValue(icon :Icon){
     /**TODO */
-    this.iconService.selectedIcon = icon;
-    this.selectOptionChanged.emit(icon)
+    this.iconService.selectedIcon = {...icon}
   }
 
 }

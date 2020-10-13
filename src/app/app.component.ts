@@ -46,9 +46,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  public selectionChanged(icon :Icon):void{
-    this.iconService.selectedIcon = {...icon}
-  }
+
 
   private initCard() {
     for (let i = 0; i < 3; i++) {
