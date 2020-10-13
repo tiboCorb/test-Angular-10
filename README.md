@@ -1,4 +1,4 @@
- ## utiliser des observables plutôt que des variables globales
+ ## utiliser un service pour partager des variables globales
 
 
- Remplacer les variables globale de l'icon service par des observables
+Remplacer les inputs et les outputs (si possible) avec des variables globales dans l' iconService

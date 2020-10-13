@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Card } from "./model/card.model";
 import { Icon } from "./model/icon.model";
-import { IconService } from "./service/icon.service";
+
 
 @Component({
   selector: "my-app",
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   public selectedIcon : Icon;
   public cardIndex : number;
 
-  constructor(public iconService: IconService) {
+  constructor() {
     this.selectedIndex = null;
     this.selectedIcon = null;
     this.cardIndex = null;
