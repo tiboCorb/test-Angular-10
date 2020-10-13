@@ -1,4 +1,4 @@
- ## Objectif remplacer les inputs
+ ## utiliser des observables plutôt que des variables globales
 
- Selectionner une carte et inserer les informations de façon programatique sans utiliser d'inputs
- 
+
+ Remplacer les variables globale de l'icon service par des observables

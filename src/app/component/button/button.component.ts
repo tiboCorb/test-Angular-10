@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component} from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges,Input} from "@angular/core";
 import { Icon } from "../../model/icon.model";
 import { IconService } from "../../service/icon.service";
 
@@ -9,16 +9,16 @@ import { IconService } from "../../service/icon.service";
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonComponent  {
-
-  public icon : Icon;
+export class ButtonComponent implements OnChanges  {
+  /**TODO */
+  @Input() icon : Icon;
 
   constructor(public iconService : IconService, private cdr: ChangeDetectorRef){}
 
-  ngOnInit(){
-    this.iconService?.selectedIcon?.subscribe(icon => {
-      this.icon = icon
-      this.cdr.detectChanges();
-      });
-  }
+/**TODO */
+ngOnChanges(): void {
+  this.cdr.detectChanges()
+}
+
+  
 }

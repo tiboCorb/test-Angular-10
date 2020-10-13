@@ -21,22 +21,24 @@ export class AppComponent implements OnInit {
   }
 
   select(index: number) {
+    /**TODO */
     if (!this.cards[index].selected) {
       this!.cards.forEach(card => (card.selected = false));
-      this.iconService.cardIndex.next(index);
+      this.iconService.cardIndex = index;
       this.cards[index].selected = true;
     } else {
-      this.iconService.cardIndex.next(null);
+      this.iconService.cardIndex = null;
       this.cards[index].selected = false;
     }
   }
 
   paint() {
-    const cardIndex = this.iconService.cardIndex.value;
+    /**TODO */
+    const cardIndex = this.iconService.cardIndex;
     if (cardIndex !== null) {
       const currentCard = this.cards[cardIndex];
        this.cards[cardIndex] = {...currentCard,
-        icon : this.iconService.selectedIcon.value,
+        icon : this.iconService.selectedIcon,
         selected :false,
         date: new Date()
        }
