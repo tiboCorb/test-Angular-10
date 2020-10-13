@@ -8,10 +8,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component} from "@angular/c
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonComponent   {
-  /**TODO */
  
   constructor(private cdr: ChangeDetectorRef){}
-
-/**TODO */
 
 }

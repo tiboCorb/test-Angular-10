@@ -15,20 +15,13 @@ export class AppComponent implements OnInit {
  
 
   constructor() {
-    this.selectedIndex = null;
-    this.selectedIcon = null;
   }
 
   ngOnInit(): void {
-    this.initCard();
   }
 
-  select(index: number) {
-   /**TODO */
-  }
 
   paint() {
-    /**TODO */
     this.paintedIcon = {...this.selectedIcon};
   }
 
@@ -36,7 +29,4 @@ export class AppComponent implements OnInit {
     this.selectedIcon = {...icon}
   }
 
-  private initCard() {
-    /**TODO */
-  }
 }

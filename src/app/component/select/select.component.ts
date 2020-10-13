@@ -18,9 +18,7 @@ export class SelectComponent  {
 
   constructor(private iconService :IconService){
     this.selectOptionChanged = new EventEmitter();
-    this.iconService.getIcon().subscribe( (icons: Icon[]) => {
-      this.selectOption = [...icons] 
-    })
+    /**TODO */
   }
 
   updateValue(icon :Icon){

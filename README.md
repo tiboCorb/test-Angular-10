@@ -1,3 +1,7 @@
- ## Parcourir une liste de carte et selection
+ ## Création de service 
 
-En utilisant une directive créer une liste de carte , permettre de  selectionner la carte à modifier
+Créer un service qui exposera une méthode :
+    
+    getIcon(): Observable<Icon[]>
+
+et alimenetera la selectbox 
