@@ -1,4 +1,4 @@
- ## utiliser un service pour partager des variables globales
+ ## colorer et afficher l'icon sectionnée sur le bouton
 
 
-Remplacer les inputs et les outputs (si possible) avec des variables globales dans l' iconService
+Quand la selected box change de valeur fair évoluer le style du bouton

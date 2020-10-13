@@ -1,6 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges,Input} from "@angular/core";
-import { Icon } from "../../model/icon.model";
-import { IconService } from "../../service/icon.service";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component} from "@angular/core";
 
 
 @Component({
@@ -9,16 +7,11 @@ import { IconService } from "../../service/icon.service";
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonComponent implements OnChanges  {
+export class ButtonComponent   {
   /**TODO */
-  @Input() icon : Icon;
-
-  constructor(public iconService : IconService, private cdr: ChangeDetectorRef){}
+ 
+  constructor(private cdr: ChangeDetectorRef){}
 
 /**TODO */
-ngOnChanges(): void {
-  this.cdr.detectChanges()
-}
 
-  
 }
