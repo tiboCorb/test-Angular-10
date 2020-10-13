@@ -10,19 +10,13 @@ import { IconService } from "../../service/icon.service";
 })
 export class SelectComponent  {
 
-
  
  @Output()selectOptionChanged : EventEmitter<Icon>;
 
- public selectOption : Icon[];
- public selectIcon : Icon;
-
-
+  public selectOption : Icon[];
+  public selectIcon : Icon;
 
   constructor(private iconService :IconService){
-    /**
-     * TODO
-     */
     this.selectOptionChanged = new EventEmitter();
     this.iconService.getIcon().subscribe( (icons: Icon[]) => {
       this.selectOption = [...icons] 
@@ -31,7 +25,6 @@ export class SelectComponent  {
 
   updateValue(icon :Icon){
     /**TODO */
-    this.iconService.selectedIcon = icon;
     this.selectOptionChanged.emit(icon)
   }
 

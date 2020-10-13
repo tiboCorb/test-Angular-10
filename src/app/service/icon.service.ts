@@ -8,13 +8,9 @@ import { Icon } from '../model/icon.model';
 export class IconService {
 
   /**TODO */
-   public cardIndex : number;
-   public selectedIcon :Icon;
 
    constructor(private http: HttpClient) {
      /**TODO */
-     this.cardIndex = null;
-     this.selectedIcon = null;
     }
 
     public getIcon(): Observable<Icon[]> {

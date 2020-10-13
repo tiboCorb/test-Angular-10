@@ -11,9 +11,13 @@ import { IconService } from "./service/icon.service";
 export class AppComponent implements OnInit {
   public selectedIndex: number;
   public cards: Card[];
+  public selectedIcon : Icon;
+  public cardIndex : number;
 
   constructor(public iconService: IconService) {
     this.selectedIndex = null;
+    this.selectedIcon = null;
+    this.cardIndex = null;
     this.cards = [];
   }
 
@@ -25,21 +29,20 @@ export class AppComponent implements OnInit {
     /**TODO */
     if (!this.cards[index].selected) {
       this!.cards.forEach(card => (card.selected = false));
-      this.iconService.cardIndex = index;
+      this.cardIndex = index;
       this.cards[index].selected = true;
     } else {
-      this.iconService.cardIndex = null;
+      this.cardIndex = null;
       this.cards[index].selected = false;
     }
   }
 
   paint() {
     /**TODO */
-    const cardIndex = this.iconService.cardIndex;
-    if (cardIndex !== null) {
-      const currentCard = this.cards[cardIndex];
-       this.cards[cardIndex] = {...currentCard,
-        icon : this.iconService.selectedIcon,
+    if (this.cardIndex !== null) {
+      const currentCard = this.cards[this.cardIndex];
+       this.cards[this.cardIndex] = {...currentCard,
+        icon : this.selectedIcon,
         selected :false,
         date: new Date()
        }
@@ -47,7 +50,8 @@ export class AppComponent implements OnInit {
   }
 
   public selectionChanged(icon :Icon):void{
-    this.iconService.selectedIcon = {...icon}
+    /**todo */
+    this.selectedIcon = {...icon}
   }
 
   private initCard() {
