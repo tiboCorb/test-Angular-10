@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Output } from "@angular/core";
-import { Icons } from "../../model/icons";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component} from "@angular/core";
+import { Icon } from "../../model/icon.model";
 import { IconService } from "../../service/icon.service";
 
 
@@ -11,7 +11,7 @@ import { IconService } from "../../service/icon.service";
 })
 export class ButtonComponent  {
 
-  public icon : Icons;
+  public icon : Icon;
 
   constructor(public iconService : IconService, private cdr: ChangeDetectorRef){}
 

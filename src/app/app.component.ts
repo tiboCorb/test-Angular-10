@@ -1,40 +1,51 @@
-import { AfterViewInit, Component, QueryList, ViewChildren } from '@angular/core';
-import { CardComponent } from './component/card/card.component';
-import { IconService } from './service/icon.service';
+import { Component, OnInit } from "@angular/core";
+import { Card } from "./model/card.model";
+import { IconService } from "./service/icon.service";
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
-export class AppComponent  {
-  @ViewChildren(CardComponent) cards: QueryList<CardComponent>
+export class AppComponent implements OnInit {
+  public selectedIndex: number;
+  public cards: Card[];
 
-
-  constructor(private iconService :IconService){
+  constructor(private iconService: IconService) {
+    this.selectedIndex = null;
+    this.cards = [];
   }
 
-  select(index :number){
-    const card =  this.cards.toArray()[index];
-
-    if( !card.selected){
-      this!.cards.forEach(card => card.selected = false)
-      this.iconService.selectedCard.next(card)
-      card.selected = true;
-    }else {
-         this.iconService.selectedCard.next(null)
-          card.selected = false;
-    }
-  
+  ngOnInit(): void {
+    this.initCard();
   }
 
-  paint(){
-    const selectCard =  this.iconService.selectedCard.value;
-
-    if(selectCard){
-      selectCard.icon = {...this.iconService.selectedIcon.value}
-      selectCard.selected = false;
+  select(index: number) {
+    if (!this.cards[index].selected) {
+      this!.cards.forEach(card => (card.selected = false));
+      this.iconService.cardIndex.next(index);
+      this.cards[index].selected = true;
+    } else {
+      this.iconService.cardIndex.next(null);
+      this.cards[index].selected = false;
     }
   }
- 
+
+  paint() {
+    const cardIndex = this.iconService.cardIndex.value;
+    if (cardIndex !== null) {
+      const currentCard = this.cards[cardIndex];
+       this.cards[cardIndex] = {...currentCard,
+        icon : this.iconService.selectedIcon.value,
+        selected :false,
+        date: new Date()
+       }
+    }
+  }
+
+  private initCard() {
+    for (let i = 0; i < 3; i++) {
+      this.cards.push({});
+    }
+  }
 }

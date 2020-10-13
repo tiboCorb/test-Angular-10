@@ -1,5 +1,5 @@
 import {  Component} from "@angular/core";
-import { Icons } from "../../model/icons";
+import { Icon } from "../../model/icon.model";
 import { IconService } from "../../service/icon.service";
 
 
@@ -10,17 +10,17 @@ import { IconService } from "../../service/icon.service";
 })
 export class SelectComponent  {
 
- public selectIcon : Icons;
- public selectOption : Icons[];
+ public selectIcon : Icon;
+ public selectOption : Icon[];
 
 
   constructor(private iconService :IconService){
-    this.iconService.getIcon().subscribe( (icons: Icons[]) => {
+    this.iconService.getIcon().subscribe( (icons: Icon[]) => {
       this.selectOption = [...icons] 
     })
   }
 
-  updateValue(icon :Icons){
+  updateValue(icon :Icon){
     this.iconService.selectedIcon.next(icon);
 
   }

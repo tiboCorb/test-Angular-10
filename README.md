@@ -1,3 +1,4 @@
-# angular-ivy-b4avcy
+ ## Objectif remplacer les inputs
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-b4avcy)
+ Selectionner une carte et inserer les informations de façon programatique sans utiliser d'inputs
+ 

@@ -1,5 +1,6 @@
-import {  Component } from "@angular/core";
-import { Icons } from "../../model/icons";
+import {  Component,Input } from "@angular/core";
+import { Card } from "../../model/card.model";
+
 
 
 @Component({
@@ -9,8 +10,8 @@ import { Icons } from "../../model/icons";
 })
 export class CardComponent  {
 
-  public icon : Icons;
-  public selected : boolean
+  @Input() card : Card;
+ 
 
   constructor(){}
 
