@@ -1,4 +1,4 @@
- ## colorer et afficher l'icon sectionnée sur le bouton
+ ## Ajouter l'heure de mise à jour sur les cartes
 
 
-Quand la selected box change de valeur fair évoluer le style du bouton
+Ajouter sur les cartes l'heure de mise à jour au format suivant : 03:40

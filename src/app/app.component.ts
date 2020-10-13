@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
   }
 
   select(index: number) {
-    /**TODO */
     if (!this.cards[index].selected) {
       this!.cards.forEach(card => (card.selected = false));
       this.cardIndex = index;
@@ -44,13 +43,11 @@ export class AppComponent implements OnInit {
        this.cards[this.cardIndex] = {...currentCard,
         icon : this.selectedIcon,
         selected :false,
-        date: new Date()
        }
     }
   }
 
   public selectionChanged(icon :Icon):void{
-    /**todo */
     this.selectedIcon = {...icon}
   }
 
