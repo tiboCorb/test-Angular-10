@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Icon } from "./model/icon.model";
 
-
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
@@ -9,10 +8,9 @@ import { Icon } from "./model/icon.model";
 })
 export class AppComponent implements OnInit {
   public selectedIndex: number;
- 
-  public selectedIcon : Icon;
-  public paintedIcon :Icon;
- 
+
+  public selectedIcon: Icon;
+  public paintedIcon: Icon;
 
   constructor() {
     this.selectedIndex = null;
@@ -20,23 +18,23 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initCard();
+    this.initCard(3);
   }
 
   select(index: number) {
-   /**TODO */
+    /**TODO */
   }
 
   paint() {
     /**TODO */
-    this.paintedIcon = {...this.selectedIcon};
+    this.paintedIcon = { ...this.selectedIcon };
   }
 
-  public selectionChanged(icon :Icon):void{
-    this.selectedIcon = {...icon}
+  public selectionChanged(icon: Icon): void {
+    this.selectedIcon = { ...icon };
   }
 
-  private initCard() {
+  private initCard(numberOfCard: number) {
     /**TODO */
   }
 }
