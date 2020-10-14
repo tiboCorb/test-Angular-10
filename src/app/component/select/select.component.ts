@@ -23,4 +23,5 @@ export class SelectComponent {
   updateValue(icon: Icon) {
     this.selectOptionChanged.emit(icon);
   }
+
 }
