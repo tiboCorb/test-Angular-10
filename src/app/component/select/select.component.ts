@@ -1,29 +1,23 @@
-import {  Component, EventEmitter,Output} from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 import { Icon } from "../../model/icon.model";
 import { IconService } from "../../service/icon.service";
 
-
 @Component({
-  selector: 'test-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+  selector: "test-select",
+  templateUrl: "./select.component.html",
+  styleUrls: ["./select.component.scss"]
 })
-export class SelectComponent  {
+export class SelectComponent {
+  @Output() selectOptionChanged: EventEmitter<Icon>;
 
- 
- @Output()selectOptionChanged : EventEmitter<Icon>;
+  public selectOption: Icon[];
+  public selectIcon: Icon;
 
-  public selectOption : Icon[];
-  public selectIcon : Icon;
-
-  constructor(private iconService :IconService){
+  constructor(private iconService: IconService) {
     this.selectOptionChanged = new EventEmitter();
-    /**TODO */
   }
 
-  updateValue(icon :Icon){
-    /**TODO */
-    this.selectOptionChanged.emit(icon)
+  updateValue(icon: Icon) {
+    this.selectOptionChanged.emit(icon);
   }
-
 }
