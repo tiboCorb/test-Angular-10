@@ -12,6 +12,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { SelectComponent } from "./component/select/select.component";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { CardComponent } from "./component/card/card.component";
 
 @NgModule({
@@ -23,6 +24,7 @@ import { CardComponent } from "./component/card/card.component";
     MatButtonModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatSnackBarModule,
     HttpClientModule,
     MatIconModule,
     MatInputModule
