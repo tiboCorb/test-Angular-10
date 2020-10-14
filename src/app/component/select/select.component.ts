@@ -1,28 +1,22 @@
-import {  Component} from "@angular/core";
+import { Component } from "@angular/core";
+import { Observable } from "rxjs";
 import { Icon } from "../../model/icon.model";
 import { IconService } from "../../service/icon.service";
 
-
 @Component({
-  selector: 'test-select',
-  templateUrl: './select.component.html',
-  styleUrls: ['./select.component.scss']
+  selector: "test-select",
+  templateUrl: "./select.component.html",
+  styleUrls: ["./select.component.scss"]
 })
-export class SelectComponent  {
+export class SelectComponent {
+  public selectIcon: Icon;
+  public selectOption: Observable<Icon[]>;
 
- public selectIcon : Icon;
- public selectOption : Icon[];
-
-
-  constructor(private iconService :IconService){
-    this.iconService.getIcon().subscribe( (icons: Icon[]) => {
-      this.selectOption = [...icons] 
-    })
+  constructor(private iconService: IconService) {
+    this.selectOption = this.iconService.getIcon();
   }
 
-  updateValue(icon :Icon){
+  updateValue(icon: Icon) {
     this.iconService.selectedIcon.next(icon);
-
   }
-
 }
