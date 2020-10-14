@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initCard();
+    this.initCard(3);
   }
 
   select(index: number) {
@@ -49,8 +49,8 @@ export class AppComponent implements OnInit {
     this.selectedIcon = { ...icon };
   }
 
-  private initCard() {
-    for (let i = 0; i < 3; i++) {
+  private initCard(numberOfcard: number) {
+    for (let i = 0; i < numberOfcard; i++) {
       this.cards.push({});
     }
   }
