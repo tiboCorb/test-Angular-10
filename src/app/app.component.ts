@@ -1,40 +1,39 @@
-import { AfterViewInit, Component, QueryList, ViewChildren } from '@angular/core';
-import { CardComponent } from './component/card/card.component';
-import { IconService } from './service/icon.service';
+import { Component, QueryList, ViewChildren } from "@angular/core";
+import { CardComponent } from "./component/card/card.component";
+import { IconService } from "./service/icon.service";
 
 @Component({
-  selector: 'my-app',
-  templateUrl: './app.component.html',
-  styleUrls: [ './app.component.css' ]
+  selector: "my-app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
-export class AppComponent  {
-  @ViewChildren(CardComponent) cards: QueryList<CardComponent>
+export class AppComponent {
+  @ViewChildren(CardComponent) cards: QueryList<CardComponent>;
 
+  constructor(private iconService: IconService) {}
 
-  constructor(private iconService :IconService){
-  }
+  select(index: number) {
+    const card = this.cards.toArray()[index];
 
-  select(index :number){
-    const card =  this.cards.toArray()[index];
-
-    if( !card.selected){
-      this!.cards.forEach(card => card.selected = false)
-      this.iconService.selectedCard.next(card)
+    if (!card.selected) {
+      this!.cards.forEach(card => {
+        card.selected = false;
+      });
+      this.iconService.selectedCard.next(card);
       card.selected = true;
-    }else {
-         this.iconService.selectedCard.next(null)
-          card.selected = false;
+      card.date = new Date();
+    } else {
+      this.iconService.selectedCard.next(null);
+      card.selected = false;
     }
-  
   }
 
-  paint(){
-    const selectCard =  this.iconService.selectedCard.value;
+  paint() {
+    const selectCard = this.iconService.selectedCard.value;
 
-    if(selectCard){
-      selectCard.icon = {...this.iconService.selectedIcon.value}
+    if (selectCard) {
+      selectCard.icon = { ...this.iconService.selectedIcon.value };
       selectCard.selected = false;
     }
   }
- 
 }

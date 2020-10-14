@@ -1,4 +1,4 @@
-
 <div class='card' [ngClass]="{'selected': selected}" [ngStyle]="{'background-color' : icon?.color}">
-  <mat-icon>{{icon?.name}}</mat-icon>
+	<mat-icon>{{icon?.name}}</mat-icon>
+	<span>{{date | date : 'hh:mm'}}</span>
 </div>
