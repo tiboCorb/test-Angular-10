@@ -1,8 +1,6 @@
 import { Icon } from "./icon.model";
 
-
-export interface Card{
-  selected?:boolean,
-  icon ?: Icon,
-/**TODO */
+export interface Card {
+  selected?: boolean;
+  icon?: Icon;
 }
