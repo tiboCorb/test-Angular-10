@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { Card } from "./model/card.model";
 import { Icon } from "./model/icon.model";
 
-
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
@@ -11,8 +10,8 @@ import { Icon } from "./model/icon.model";
 export class AppComponent implements OnInit {
   public selectedIndex: number;
   public cards: Card[];
-  public selectedIcon : Icon;
-  public cardIndex : number;
+  public selectedIcon: Icon;
+  public cardIndex: number;
 
   constructor() {
     this.selectedIndex = null;
@@ -26,7 +25,6 @@ export class AppComponent implements OnInit {
   }
 
   select(index: number) {
-    /**TODO */
     if (!this.cards[index].selected) {
       this!.cards.forEach(card => (card.selected = false));
       this.cardIndex = index;
@@ -38,20 +36,19 @@ export class AppComponent implements OnInit {
   }
 
   paint() {
-    /**TODO */
     if (this.cardIndex !== null) {
       const currentCard = this.cards[this.cardIndex];
-       this.cards[this.cardIndex] = {...currentCard,
-        icon : this.selectedIcon,
-        selected :false,
+      this.cards[this.cardIndex] = {
+        ...currentCard,
+        icon: this.selectedIcon,
+        selected: false,
         date: new Date()
-       }
+      };
     }
   }
 
-  public selectionChanged(icon :Icon):void{
-    /**todo */
-    this.selectedIcon = {...icon}
+  public selectionChanged(icon: Icon): void {
+    this.selectedIcon = { ...icon };
   }
 
   private initCard() {

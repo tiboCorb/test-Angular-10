@@ -1,4 +1,4 @@
- ## colorer et afficher l'icon sectionnée sur le bouton
+ ## colorer et afficher l'icone sectionnée sur le bouton
 
 
-Quand la selected box change de valeur fair évoluer le style du bouton
+Quand la select box change de valeur faire évoluer le style du bouton
