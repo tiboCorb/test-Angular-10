@@ -22,7 +22,6 @@ export class SelectComponent  {
   }
 
   updateValue(icon :Icon){
-    /**TODO */
     this.selectOptionChanged.emit(icon)
   }
 
